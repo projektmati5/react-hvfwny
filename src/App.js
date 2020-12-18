@@ -13,7 +13,10 @@ export default class App extends React.Component{
   {this.setState(state=>({dateVisible:!state.dateVisible}))}
   
   
-  render(){return(<div><button onClick={this.onButtonClick.bind(this)}>Elo</button>{this.state.dateVisible && <Data/>}</div>
+  render(){return(<div><button onClick={this.onButtonClick.bind(this)}>Elo</button>{
+    //if(this.state.dateVisible==true){},
+    
+     <Data/>}</div>
   )
   }}
   
@@ -24,5 +27,5 @@ class Data extends React.Component{
 
 
   render(){const dane=0;
-  return <div>a</div>;}
+  return <button>a</button>;}
 }
