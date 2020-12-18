@@ -24,5 +24,5 @@ class Data extends React.Component{
 
 
   render(){const dane=0;
-  return dane;}
+  return <div>a</div>;}
 }
