@@ -16,16 +16,34 @@ export default class App extends React.Component{
   render(){return(<div><button onClick={this.onButtonClick.bind(this)}>Elo</button>{
     //if(this.state.dateVisible==true){},
     
-     <Data/>}</div>
+     this.state.dateVisible&&<Data/>}</div>
   )
   }}
   
 
 class Data extends React.Component{
   constructor(props){super(props);
-  this.state={czesc:0}}
+  this.state={czesc:0, date:new Date()}}
+
+
+componentDidMount() {
+    this.timerId = window.setInterval(this.updateDate.bind(this), 1000);
+  }
+
+  componentWillUnmount() {
+    window.clearInterval(this.timerId);
+  }
+
+updateDate() {
+    this.setState({
+      date: new Date()
+    });
+  }
 
 
   render(){const dane=0;
-  return <button>a</button>;}
+
+  const dateStr = this.state.date.toString();
+
+  return <button>{dateStr}</button>;}
 }
